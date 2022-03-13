@@ -11,6 +11,5 @@ Getting the friends of a user
 ```cs
 using RobloxNET;
 
-RobloxFriendsAPI FriendsAPI = new RobloxFriendsAPI();
-RobloxUser[] Friends = await FriendsAPI.GetUserFriendsAsync(1);
+RobloxUser[] Friends = await RobloxFriendsAPI.GetUserFriendsAsync(1);
 ```
