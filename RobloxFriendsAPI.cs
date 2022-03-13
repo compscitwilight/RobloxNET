@@ -13,16 +13,11 @@ namespace RobloxNET
      * Class for working with the Roblox friends API. Documentation for the 
      * Roblox friends API can be linked here, https://api.roblox.com/docs#Friends
     */
-    public class RobloxFriendsAPI
+    public static class RobloxFriendsAPI
     {
-        public HttpClient HTTPClient;
+        public static HttpClient HTTPClient = new HttpClient();
 
-        public RobloxFriendsAPI()
-        {
-            HTTPClient = new HttpClient();
-        }
-
-        public void Dispose()
+        public static void Dispose()
         {
             HTTPClient.Dispose();
         }
@@ -30,7 +25,7 @@ namespace RobloxNET
         /*
          * Asynchronously returns an array of RobloxUsers which are the friends of the user's ID.
         */
-        public async Task<RobloxUser[]> GetUsersFriendsFromIdAsync(long Id)
+        public async static Task<RobloxUser[]> GetUsersFriendsFromIdAsync(long Id)
         {
             RobloxUser[] FriendsArr;
             string apiURL = $"http://api.roblox.com/users/{Id}/friends";
