@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Vxs9xGpvlD4yNDIGXGwfoBzXWnPzEvhzG5EGvDnKXLIKdKoXxyqDBKcsvSC382/zO39jIXEcydXanYm1F6l8fw==",
+  "dgSpecHash": "jkg7gGjLL4PbiqfD/mzpCwTzB9pJY240G7fsFT7KBhgi4GlWXTgMZSabP+/5qNfriG9Muc/usi4yrm70zTLGrg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Shiny\\source\\repos\\RobloxNET\\RobloxNET.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Shiny\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
