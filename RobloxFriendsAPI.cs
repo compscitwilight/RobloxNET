@@ -15,7 +15,7 @@ namespace RobloxNET
     */
     public static class RobloxFriendsAPI
     {
-        public static HttpClient HTTPClient = new HttpClient();
+        private static HttpClient HTTPClient = new HttpClient();
 
         public static void Dispose()
         {
@@ -45,7 +45,7 @@ namespace RobloxNET
                     throw new HttpRequestException($"Request to get friend information from UserId {Id} failed.");
                 }
             }
-
+            
             return FriendsArr;
         }
     }
