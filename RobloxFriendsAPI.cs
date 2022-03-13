@@ -27,6 +27,9 @@ namespace RobloxNET
             HTTPClient.Dispose();
         }
 
+        /*
+         * Asynchronously returns an array of RobloxUsers which are the friends of the user's ID.
+        */
         public async Task<RobloxUser[]> GetUsersFriendsFromIdAsync(long Id)
         {
             RobloxUser[] FriendsArr;
