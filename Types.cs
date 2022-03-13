@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace RobloxNET
 {
+    /*
     internal class Types
     {
 
     }
+    */
 
     /*
      * The RobloxAsset class is meant to contain Roblox asset data that is sent 

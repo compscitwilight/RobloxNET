@@ -1,0 +1,12 @@
+C:\Users\Shiny\source\repos\RobloxNET\bin\Debug\net6.0\RobloxNET.deps.json
+C:\Users\Shiny\source\repos\RobloxNET\bin\Debug\net6.0\RobloxNET.dll
+C:\Users\Shiny\source\repos\RobloxNET\bin\Debug\net6.0\RobloxNET.pdb
+C:\Users\Shiny\source\repos\RobloxNET\obj\Debug\net6.0\RobloxNET.csproj.AssemblyReference.cache
+C:\Users\Shiny\source\repos\RobloxNET\obj\Debug\net6.0\RobloxNET.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shiny\source\repos\RobloxNET\obj\Debug\net6.0\RobloxNET.AssemblyInfoInputs.cache
+C:\Users\Shiny\source\repos\RobloxNET\obj\Debug\net6.0\RobloxNET.AssemblyInfo.cs
+C:\Users\Shiny\source\repos\RobloxNET\obj\Debug\net6.0\RobloxNET.csproj.CoreCompileInputs.cache
+C:\Users\Shiny\source\repos\RobloxNET\obj\Debug\net6.0\RobloxNET.dll
+C:\Users\Shiny\source\repos\RobloxNET\obj\Debug\net6.0\refint\RobloxNET.dll
+C:\Users\Shiny\source\repos\RobloxNET\obj\Debug\net6.0\RobloxNET.pdb
+C:\Users\Shiny\source\repos\RobloxNET\obj\Debug\net6.0\ref\RobloxNET.dll
