@@ -82,6 +82,9 @@ namespace RobloxNET
         public int MinimumMembershipLevel { get; set; }
     }
 
+    /*
+     * The RobloxAssetCreator class is meant to contain creator data. 
+    */
     public class RobloxAssetCreator
     {
         public RobloxAssetCreator(long Id, string Username, string CreatorType, long CreatorTargetId)
@@ -167,5 +170,17 @@ namespace RobloxNET
         public string? AvatarUri { get; set; }
         public bool AvatarFinal { get; set; }
         public bool IsOnline { get; set; }
+    }
+
+    public class RobloxCanManage
+    {
+        public RobloxCanManage(bool Success, bool CanManage)
+        {
+            this.Success = Success;
+            this.CanManage = CanManage;
+        }
+
+        public bool Success { get; set; }
+        public bool CanManage { get; set; }
     }
 }

@@ -70,5 +70,27 @@ namespace RobloxNET
 
             return User;
         }
+
+        public async static Task<RobloxCanManage> GetUserCanManageAsync(int userId, long assetId)
+        {
+            RobloxCanManage CanManageData;
+            string APILink = $"http://api.roblox.com/users/{userId}/canmanage/{assetId}";
+
+            using (HttpResponseMessage Response = await HTTPClient.GetAsync(APILink))
+            {
+                if (Response.StatusCode == HttpStatusCode.OK)
+                {
+                    string str = await Response.Content.ReadAsStringAsync();
+
+                    CanManageData = JsonConvert.DeserializeObject<RobloxCanManage>(str);
+                }
+                else
+                {
+                    throw new HttpRequestException($"Request to get user can manage data from UserId {userId} and AssetId {assetId} failed.");
+                }
+            }
+
+            return CanManageData;
+        }
     }
 }

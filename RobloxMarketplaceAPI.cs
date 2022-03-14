@@ -53,7 +53,7 @@ namespace RobloxNET
             {
                 if (Response.StatusCode == HttpStatusCode.OK)
                 {
-                    string str = await Response.Content?.ReadAsStringAsync();
+                    string str = await Response.Content.ReadAsStringAsync();
 
                     Gamepass = JsonConvert.DeserializeObject<RobloxAsset>(str);
                 } else
