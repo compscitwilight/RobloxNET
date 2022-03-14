@@ -228,4 +228,18 @@ namespace RobloxNET
         public string type { get; set; }
         public string name { get; set; }
     }
+
+    public class RobloxGroupRole
+    {
+        public RobloxGroupRole(long id, string name, byte rank)
+        {
+            this.id = id;
+            this.name = name;
+            this.rank = rank;
+        }
+
+        public long id { get; set; }
+        public string name { get; set; }
+        public byte rank { get; set; }
+    }
 }
