@@ -43,5 +43,26 @@ namespace RobloxNET
 
             return Asset;
         }
+
+        public async static Task<RobloxAsset> GetGamepassProductInfoAsync(long gamePassId)
+        {
+            RobloxAsset Gamepass;
+            string APILink = $"http://api.roblox.com/marketplace/game-pass-product-info?gamePassId={gamePassId}";
+
+            using (HttpResponseMessage Response = await HTTPClient.GetAsync(APILink))
+            {
+                if (Response.StatusCode == HttpStatusCode.OK)
+                {
+                    string str = await Response.Content?.ReadAsStringAsync();
+
+                    Gamepass = JsonConvert.DeserializeObject<RobloxAsset>(str);
+                } else
+                {
+                    throw new HttpRequestException($"Request to get game pass product information from GamePassId {gamePassId} failed.");
+                }
+            }
+
+            return Gamepass;
+        }
     }
 }
