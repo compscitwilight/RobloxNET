@@ -46,5 +46,29 @@ namespace RobloxNET
 
             return User;
         }
+
+        public async static Task<RobloxUser> GetUserFromUsernameAsync(string username)
+        {
+            RobloxUser User;
+            string APILink = $"http://api.roblox.com/users/get-by-username?username={username}";
+
+            using (HttpResponseMessage APIResponse = await HTTPClient.GetAsync(APILink))
+            {
+                if (APIResponse.StatusCode == HttpStatusCode.OK)
+                {
+                    using (HttpContent ResponseContent = APIResponse.Content)
+                    {
+                        string str = await ResponseContent.ReadAsStringAsync();
+
+                        User = JsonConvert.DeserializeObject<RobloxUser>(str);
+                    }
+                } else
+                {
+                    throw new HttpRequestException($"Request to get user information from Username {username} failed.");
+                }
+            }
+
+            return User;
+        }
     }
 }
