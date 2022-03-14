@@ -24,7 +24,7 @@ namespace RobloxNET
             long IconImageAssetId, 
             DateTime Created, 
             DateTime Updated, 
-            int PriceInRobux, 
+            int? PriceInRobux, 
             int? PriceInTickets, 
             int Sales, 
             bool IsNew, 
