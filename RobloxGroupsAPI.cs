@@ -41,5 +41,29 @@ namespace RobloxNET
 
             return Groups;
         }
+
+        public async static Task<RobloxGroupRole> GetRoleFromUserIdAsync(long userId)
+        {
+            RobloxGroupRole Role;
+            string APILink = $"https://groups.roblox.com/v2/users/{userId}/groups/roles";
+
+            using (HttpResponseMessage Response = await HTTPCLient.GetAsync(APILink))
+            {
+                if (Response.StatusCode == HttpStatusCode.OK)
+                {
+                    using (HttpContent ResponseContent = Response.Content)
+                    {
+                        string str = await ResponseContent.ReadAsStringAsync();
+
+                        Role = JsonConvert.DeserializeObject<RobloxGroupRole>(str);
+                    }
+                } else
+                {
+                    throw new HttpRequestException($"Request to get role information from UserId {userId} failed.");
+                }
+            }
+
+            return Role;
+        }
     }
 }
