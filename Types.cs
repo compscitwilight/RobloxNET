@@ -20,7 +20,7 @@ namespace RobloxNET
             string Name, 
             string Description, 
             long AssetTypeId, 
-            Tuple<long, string> Creator, 
+            RobloxAssetCreator Creator, 
             long IconImageAssetId, 
             DateTime Created, 
             DateTime Updated, 
@@ -66,7 +66,7 @@ namespace RobloxNET
         public string Name { get; set; }
         public string Description { get; set; }
         public long AssetTypeId { get; set; }
-        public Tuple<long, string> Creator { get; set; }
+        public RobloxAssetCreator Creator { get; set; }
         public long IconImageAssetId { get; set; }
         public DateTime Created { get; set; }
         public DateTime Updated { get; set; }
@@ -80,6 +80,22 @@ namespace RobloxNET
         public bool IsLimitedUnique { get; set; }
         public int? Remaining { get; set; }
         public int MinimumMembershipLevel { get; set; }
+    }
+
+    public class RobloxAssetCreator
+    {
+        public RobloxAssetCreator(long Id, string Username, string CreatorType, long CreatorTargetId)
+        {
+            this.Id = Id;
+            this.Username = Username;
+            this.CreatorType = CreatorType;
+            this.CreatorTargetId = CreatorTargetId;
+        }
+
+        public long Id { get; set; }
+        public string Username { get; set; }
+        public string CreatorType { get; set; }
+        public long CreatorTargetId { get; set; }
     }
 
     /*
