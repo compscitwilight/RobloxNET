@@ -172,6 +172,10 @@ namespace RobloxNET
         public bool IsOnline { get; set; }
     }
 
+    /*
+     * RobloxCanManage is meant to contain data for the GetUserCanManageAsync in
+     * the RobloxUsersAPI.
+    */
     public class RobloxCanManage
     {
         public RobloxCanManage(bool Success, bool CanManage)
@@ -182,5 +186,46 @@ namespace RobloxNET
 
         public bool Success { get; set; }
         public bool CanManage { get; set; }
+    }
+
+    public class Group
+    {
+        public Group(
+            long id, 
+            string name, 
+            string description, 
+            GroupOwner owner, 
+            int memberCount, 
+            DateTime created
+            )
+        {
+            this.id = id;
+            this.name = name;
+            this.description = description;
+            this.owner = owner;
+            this.memberCount = memberCount;
+            this.created = created;
+        }
+
+        public long id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public GroupOwner owner { get; set; }
+        public int memberCount { get; set; }
+        public DateTime created { get; set; }
+    }
+    
+    public class GroupOwner
+    {
+        public GroupOwner(long id, string type, string name)
+        {
+            this.id = id;
+            this.type = type;
+            this.name = name;
+        }
+
+        public long id { get; set; }
+        public string type { get; set; }
+        public string name { get; set; }
     }
 }
