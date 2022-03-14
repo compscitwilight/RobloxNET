@@ -188,13 +188,13 @@ namespace RobloxNET
         public bool CanManage { get; set; }
     }
 
-    public class Group
+    public class RobloxGroup
     {
-        public Group(
+        public RobloxGroup(
             long id, 
             string name, 
-            string description, 
-            GroupOwner owner, 
+            string description,
+            RobloxGroupOwner owner, 
             int memberCount, 
             DateTime created
             )
@@ -210,14 +210,14 @@ namespace RobloxNET
         public long id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public GroupOwner owner { get; set; }
+        public RobloxGroupOwner owner { get; set; }
         public int memberCount { get; set; }
         public DateTime created { get; set; }
     }
     
-    public class GroupOwner
+    public class RobloxGroupOwner
     {
-        public GroupOwner(long id, string type, string name)
+        public RobloxGroupOwner(long id, string type, string name)
         {
             this.id = id;
             this.type = type;
