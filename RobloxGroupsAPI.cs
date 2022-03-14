@@ -65,5 +65,29 @@ namespace RobloxNET
 
             return Role;
         }
+
+        public async static Task<RobloxGroupWallPost[]> GetGroupWallPostsAsync(long groupId, SortOrder sortOrder, int limit)
+        {
+            RobloxGroupWallPost[] Post;
+            string APILink = $"https://groups.roblox.com/v2/groups/{groupId}/wall/posts?sortOrder={sortOrder}&limit={limit}";
+            
+            using (HttpResponseMessage Response = await HTTPCLient.GetAsync(APILink))
+            {
+                if (Response.StatusCode == HttpStatusCode.OK)
+                {
+                    using (HttpContent ResponseContent = Response.Content)
+                    {
+                        string str = await ResponseContent.ReadAsStringAsync();
+
+                        Post = JsonConvert.DeserializeObject<RobloxGroupWallPost[]>(str);
+                    }
+                } else
+                {
+                    throw new HttpRequestException($"Request to get group wall information from data [{groupId},{sortOrder},{limit}] failed.");
+                }
+            }
+
+            return Post;
+        }
     }
 }

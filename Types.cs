@@ -188,6 +188,10 @@ namespace RobloxNET
         public bool CanManage { get; set; }
     }
 
+    /*
+     * The RobloxGroup class is meant to contain data for Roblox groups. 
+     * Documentation for Roblox groups can be linked here: https://groups.roblox.com/docs#
+    */
     public class RobloxGroup
     {
         public RobloxGroup(
@@ -215,6 +219,10 @@ namespace RobloxNET
         public DateTime created { get; set; }
     }
     
+    /*
+     * The RobloxGroupOwner class is meant to contain data for the owner of 
+     * a RobloxGroup.
+    */
     public class RobloxGroupOwner
     {
         public RobloxGroupOwner(long id, string type, string name)
@@ -229,6 +237,9 @@ namespace RobloxNET
         public string name { get; set; }
     }
 
+    /*
+     * The RobloxGroupRole class is meant to contain data for group roles. 
+    */
     public class RobloxGroupRole
     {
         public RobloxGroupRole(long id, string name, byte rank)
@@ -241,5 +252,62 @@ namespace RobloxNET
         public long id { get; set; }
         public string name { get; set; }
         public byte rank { get; set; }
+    }
+
+    /*
+     * The RobloxGroupWallPost class is meant to contain data for group wall posts 
+    */
+    public class RobloxGroupWallPost
+    {
+        public RobloxGroupWallPost(long id, RobloxGroupWallPoster poster, string body, DateTime created, DateTime updated)
+        {
+            this.id = id;
+            this.poster = poster;
+            this.body = body;
+            this.created = created;
+            this.updated = updated;
+        }
+
+        public long id { get; set; }
+        public RobloxGroupWallPoster poster { get; set; }
+        public string body { get; set; }
+        public DateTime created { get; set; }
+        public DateTime updated { get; set; }
+    }
+
+    /*
+     * The RobloxGroupWallPoster class is meant to contain data for the poster of 
+     * a group wall post.
+    */
+    public class RobloxGroupWallPoster
+    {
+        public RobloxGroupWallPoster(RobloxGroupWallPosterUser user, RobloxGroupRole role)
+        {
+            this.user = user;
+            this.role = role;
+        }
+
+        public RobloxGroupWallPosterUser user { get; set; }
+        public RobloxGroupRole role { get; set; }
+    }
+
+    /*
+     * The RobloxGroupWallPosterUser class is meant to contain data for the user
+     * of the poster of a group wall post.
+    */
+    public class RobloxGroupWallPosterUser
+    {
+        public RobloxGroupWallPosterUser(string buildersClubMembershipType, long userId, string username, string displayName)
+        {
+            this.buildersClubMembershipType = buildersClubMembershipType;
+            this.userId = userId;
+            this.username = username;
+            this.displayName = displayName;
+        }
+
+        public string buildersClubMembershipType { get; set; }
+        public long userId { get; set; }
+        public string username { get; set; }
+        public string displayName { get; set; }
     }
 }
