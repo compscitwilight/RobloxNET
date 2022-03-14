@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace RobloxNET
 {
@@ -20,6 +21,27 @@ namespace RobloxNET
         public static void Dispose()
         {
             HTTPClient.Dispose();
+        }
+
+        public async static Task<RobloxAsset> GetProductInfoAsync(long assetId)
+        {
+            RobloxAsset Asset;
+            string APILink = $"http://api.roblox.com/marketplace/productinfo?assetId={assetId}";
+
+            using (HttpResponseMessage Response = await HTTPClient.GetAsync(APILink))
+            {
+                if (Response.StatusCode == HttpStatusCode.OK)
+                {
+                    string str = await Response.Content.ReadAsStringAsync();
+
+                    Asset = JsonConvert.DeserializeObject<RobloxAsset>(str);
+                } else
+                {
+                    throw new HttpRequestException($"Request to get product information from AssetId {assetId} failed.");
+                }
+            }
+
+            return Asset;
         }
     }
 }

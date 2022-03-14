@@ -28,9 +28,9 @@ namespace RobloxNET
         public async static Task<RobloxUser[]> GetUsersFriendsFromIdAsync(long Id)
         {
             RobloxUser[] FriendsArr;
-            string apiURL = $"http://api.roblox.com/users/{Id}/friends";
+            string APILink = $"http://api.roblox.com/users/{Id}/friends";
 
-            using (HttpResponseMessage APIResponse = await HTTPClient.GetAsync(apiURL))
+            using (HttpResponseMessage APIResponse = await HTTPClient.GetAsync(APILink))
             {
                 if (APIResponse.StatusCode == HttpStatusCode.OK)
                 {
