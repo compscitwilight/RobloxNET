@@ -7,13 +7,6 @@ using System.Threading.Tasks;
 namespace RobloxNET
 {
     /*
-    internal class Types
-    {
-
-    }
-    */
-
-    /*
      * The RobloxAsset class is meant to contain Roblox asset data that is sent 
      * by the Roblox API.
     */
@@ -77,7 +70,7 @@ namespace RobloxNET
         public long IconImageAssetId { get; set; }
         public DateTime Created { get; set; }
         public DateTime Updated { get; set; }
-        public int PriceInRobux { get; set; }
+        public int? PriceInRobux { get; set; }
         public int? PriceInTickets { get; set; }
         public int Sales { get; set; }
         public bool IsNew { get; set; }
