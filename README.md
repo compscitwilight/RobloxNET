@@ -1,7 +1,7 @@
 <img src="/resources/logo.png" align="center">
 <hr>
 
-version: 2.0.1-a
+version: 3.0.0-a
 <br>
 Roblox.NET is a C# package that helps you work with the <a href="https://api.roblox.com/docs">Roblox API</a>. It is a recreated and improved version of <a href="https://github.com/REdgars/Roblox.NET">REdgars's Roblox.NET</a>.
 
