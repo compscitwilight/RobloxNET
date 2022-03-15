@@ -40,7 +40,7 @@ namespace RobloxNET
                     }
                 } else
                 {
-                    throw new HttpRequestException($"Request to get user information from UserId {userId} failed.");
+                    throw new HttpRequestException($"Request to get user information from UserId {userId} failed. (HTTP {APIResponse.StatusCode})");
                 }
             }
 
@@ -64,7 +64,7 @@ namespace RobloxNET
                     }
                 } else
                 {
-                    throw new HttpRequestException($"Request to get user information from Username {username} failed.");
+                    throw new HttpRequestException($"Request to get user information from Username {username} failed. (HTTP {APIResponse.StatusCode})");
                 }
             }
 

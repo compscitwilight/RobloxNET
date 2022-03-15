@@ -35,7 +35,7 @@ namespace RobloxNET
                     }
                 } else
                 {
-                    throw new HttpRequestException($"Request to get group(s) information from GroupIds {groupIds} failed.");
+                    throw new HttpRequestException($"Request to get group(s) information from GroupIds {groupIds} failed. (HTTP {Response.StatusCode})");
                 } 
             }
 
@@ -59,7 +59,7 @@ namespace RobloxNET
                     }
                 } else
                 {
-                    throw new HttpRequestException($"Request to get role information from UserId {userId} failed.");
+                    throw new HttpRequestException($"Request to get role information from UserId {userId} failed. (HTTP {Response.StatusCode})");
                 }
             }
 
@@ -83,7 +83,7 @@ namespace RobloxNET
                     }
                 } else
                 {
-                    throw new HttpRequestException($"Request to get group wall information from data [{groupId},{sortOrder},{limit}] failed.");
+                    throw new HttpRequestException($"Request to get group wall information from data [{groupId},{sortOrder},{limit}] failed. (HTTP {Response.StatusCode})");
                 }
             }
 

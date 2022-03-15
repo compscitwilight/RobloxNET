@@ -42,7 +42,7 @@ namespace RobloxNET
                     }
                 } else
                 {
-                    throw new HttpRequestException($"Request to get friend information from UserId {Id} failed.");
+                    throw new HttpRequestException($"Request to get friend information from UserId {Id} failed. (HTTP {APIResponse.StatusCode})");
                 }
             }
             

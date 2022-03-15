@@ -37,7 +37,7 @@ namespace RobloxNET
                     Asset = JsonConvert.DeserializeObject<RobloxAsset>(str);
                 } else
                 {
-                    throw new HttpRequestException($"Request to get product information from AssetId {assetId} failed.");
+                    throw new HttpRequestException($"Request to get product information from AssetId {assetId} failed. (HTTP {Response.StatusCode})");
                 }
             }
 
@@ -58,7 +58,7 @@ namespace RobloxNET
                     Gamepass = JsonConvert.DeserializeObject<RobloxAsset>(str);
                 } else
                 {
-                    throw new HttpRequestException($"Request to get game pass product information from GamePassId {gamePassId} failed.");
+                    throw new HttpRequestException($"Request to get game pass product information from GamePassId {gamePassId} failed. (HTTP {Response.StatusCode})");
                 }
             }
 
