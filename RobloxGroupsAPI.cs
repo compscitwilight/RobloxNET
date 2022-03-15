@@ -66,11 +66,15 @@ namespace RobloxNET
             return Role;
         }
 
-        public async static Task<RobloxGroupWallPost[]> GetGroupWallPostsAsync(long groupId, SortOrder sortOrder, int limit)
+        public async static Task<RobloxGroupWallPost[]> GetGroupWallPostsAsync(long groupId, RobloxSortOrder sortOrder, RobloxLimit limit)
         {
-            RobloxGroupWallPost[] Post;
-            string APILink = $"https://groups.roblox.com/v2/groups/{groupId}/wall/posts?sortOrder={sortOrder}&limit={limit}";
-            
+            RobloxGroupWallPost[] Posts;
+            string SortOrderString = sortOrder.ToString();
+            string LimitValue = limit.GetHashCode().ToString();
+
+            string APILink = $"https://groups.roblox.com/v2/groups/{groupId}/wall/posts?sortOrder={SortOrderString}&limit={LimitValue}";
+            Console.WriteLine(APILink);
+
             using (HttpResponseMessage Response = await HTTPCLient.GetAsync(APILink))
             {
                 if (Response.StatusCode == HttpStatusCode.OK)
@@ -79,15 +83,15 @@ namespace RobloxNET
                     {
                         string str = await ResponseContent.ReadAsStringAsync();
 
-                        Post = JsonConvert.DeserializeObject<RobloxGroupWallPost[]>(str);
+                        Posts = JsonConvert.DeserializeObject<RobloxGroupWallPost[]>(str);
                     }
                 } else
                 {
-                    throw new HttpRequestException($"Request to get group wall information from data [{groupId},{sortOrder},{limit}] failed. (HTTP {Response.StatusCode})");
+                    throw new HttpRequestException($"Request to get group wall information from data [{groupId},{SortOrderString},{limit}] failed. (HTTP {Response.StatusCode})");
                 }
             }
 
-            return Post;
+            return Posts;
         }
     }
 }

@@ -259,8 +259,18 @@ namespace RobloxNET
     */
     public class RobloxGroupWallPost
     {
-        public RobloxGroupWallPost(long id, RobloxGroupWallPoster poster, string body, DateTime created, DateTime updated)
+        public RobloxGroupWallPost(
+            string? previousPageCursor, 
+            string nextPageCursor, 
+            long id, 
+            RobloxGroupWallPoster poster, 
+            string body, 
+            DateTime created, 
+            DateTime updated
+            )
         {
+            this.previousPageCursor = previousPageCursor;
+            this.nextPageCursor = nextPageCursor;
             this.id = id;
             this.poster = poster;
             this.body = body;
@@ -268,6 +278,8 @@ namespace RobloxNET
             this.updated = updated;
         }
 
+        public string? previousPageCursor { get; set; }
+        public string nextPageCursor { get; set; }
         public long id { get; set; }
         public RobloxGroupWallPoster poster { get; set; }
         public string body { get; set; }

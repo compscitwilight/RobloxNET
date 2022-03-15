@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace RobloxNET
 {
-    public enum SortOrder
+    public enum RobloxSortOrder
     {
         Asc,
         Desc
+    }
+
+    public enum RobloxLimit
+    {
+        Default = 10,
+        Ten = 10,
+        TwentyFive = 25,
+        Fifty = 50,
+        Hundred = 100
     }
 }
