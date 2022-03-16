@@ -322,4 +322,63 @@ namespace RobloxNET
         public string username { get; set; }
         public string displayName { get; set; }
     }
+
+    /*
+     * The RobloxBadge class is the class meant for containing Roblox badge information. 
+    */
+    public class RobloxBadge
+    {
+        public RobloxBadge(
+            long id, 
+            string name, 
+            string description, 
+            string displayName, 
+            string displayDescription, 
+            bool enabled, 
+            long iconImageId, 
+            long displayIconImageId, 
+            DateTime created,
+            DateTime updated,
+            RobloxBadgeStatistics statistics
+            )
+        {
+            this.id = id;
+            this.name = name;
+            this.description = description;
+            this.displayName = displayName;
+            this.displayDescription = displayDescription;
+            this.enabled = enabled;
+            this.iconImageId = iconImageId;
+            this.displayIconImageId = displayIconImageId;
+            this.created = created;
+            this.updated = updated;
+            this.statistics = statistics;
+        }
+
+        public long id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public string displayName { get; set; }
+        public string displayDescription { get; set; }
+        public bool enabled { get; set; }
+        public long iconImageId { get; set; }
+        public long displayIconImageId { get; set; }
+        public DateTime created { get; set; }
+        public DateTime updated { get; set; }
+        public RobloxBadgeStatistics statistics { get; set; }
+    }
+
+    public class RobloxBadgeStatistics
+    {
+        public RobloxBadgeStatistics(int pastDayAwardedCount, int awardedCount, int winRatePercentage)
+        {
+            this.pastDayAwardedCount = pastDayAwardedCount;
+            this.awardedCount = awardedCount;
+            this.winRatePercentage = winRatePercentage;
+        }
+
+        public int pastDayAwardedCount { get; set; }
+        public int awardedCount { get; set; }
+        public int winRatePercentage { get; set; }
+    }
 }
