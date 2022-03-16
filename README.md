@@ -1,7 +1,7 @@
 <img src="/resources/logo.png" align="center">
 <hr>
 
-version: 3.0.0-a
+version: 3.1.0-a
 <br>
 Roblox.NET is a C# package that helps you work with the <a href="https://api.roblox.com/docs">Roblox API</a>. It is a recreated and improved version of <a href="https://github.com/REdgars/Roblox.NET">REdgars's Roblox.NET</a>.
 
@@ -10,6 +10,7 @@ Roblox.NET is a C# package that helps you work with the <a href="https://api.rob
 * Roblox groups API
 * Roblox marketplace API
 * Roblox users API
+* Roblox badges API
 
 ## Examples
 Getting the friends of a user
