@@ -3,11 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace RobloxNET
 {
     public static class RobloxBadgesAPI
     {
+        private static HttpClient HTTPClient = new HttpClient();
 
+        public async static Task<RobloxBadge> GetBadgeInfoAsync(long badgeId)
+        {
+            RobloxBadge Badge;
+            string APILink = $"https://badges.roblox.com/v1/badges/{badgeId}";
+
+            using (HttpResponseMessage Response = await HTTPClient.GetAsync(APILink))
+            {
+                if (Response.StatusCode == HttpStatusCode.OK)
+                {
+                    using (HttpContent APIContent = Response.Content)
+                    {
+                        string str = await APIContent.ReadAsStringAsync();
+
+                        Badge = JsonConvert.DeserializeObject<RobloxBadge>(str);
+                    }
+                } else
+                {
+                    throw new HttpRequestException($"Request to get group badge information from BadgeId {badgeId} failed. (HTTP {Response.StatusCode})");
+                }
+            }
+
+            return Badge;
+        }
     }
 }

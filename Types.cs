@@ -373,7 +373,7 @@ namespace RobloxNET
 
     public class RobloxBadgeStatistics
     {
-        public RobloxBadgeStatistics(int pastDayAwardedCount, int awardedCount, int winRatePercentage)
+        public RobloxBadgeStatistics(int pastDayAwardedCount, int awardedCount, decimal winRatePercentage)
         {
             this.pastDayAwardedCount = pastDayAwardedCount;
             this.awardedCount = awardedCount;
@@ -382,7 +382,7 @@ namespace RobloxNET
 
         public int pastDayAwardedCount { get; set; }
         public int awardedCount { get; set; }
-        public int winRatePercentage { get; set; }
+        public decimal winRatePercentage { get; set; }
     }
 
     public class RobloxBadgeAwardingUniverse
