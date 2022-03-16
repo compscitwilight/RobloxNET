@@ -339,7 +339,8 @@ namespace RobloxNET
             long displayIconImageId, 
             DateTime created,
             DateTime updated,
-            RobloxBadgeStatistics statistics
+            RobloxBadgeStatistics statistics,
+            RobloxBadgeAwardingUniverse awardingUniverse
             )
         {
             this.id = id;
@@ -353,6 +354,7 @@ namespace RobloxNET
             this.created = created;
             this.updated = updated;
             this.statistics = statistics;
+            this.awardingUniverse = awardingUniverse;
         }
 
         public long id { get; set; }
@@ -366,6 +368,7 @@ namespace RobloxNET
         public DateTime created { get; set; }
         public DateTime updated { get; set; }
         public RobloxBadgeStatistics statistics { get; set; }
+        public RobloxBadgeAwardingUniverse awardingUniverse { get; set; }
     }
 
     public class RobloxBadgeStatistics
@@ -380,5 +383,19 @@ namespace RobloxNET
         public int pastDayAwardedCount { get; set; }
         public int awardedCount { get; set; }
         public int winRatePercentage { get; set; }
+    }
+
+    public class RobloxBadgeAwardingUniverse
+    {
+        public RobloxBadgeAwardingUniverse(long id, string name, long rootPlaceId)
+        {
+            this.id = id;
+            this.name = name;
+            this.rootPlaceId = rootPlaceId;
+        }
+
+        public long id { get; set; }
+        public string name { get; set; }
+        public long rootPlaceId { get; set; }
     }
 }
