@@ -371,6 +371,10 @@ namespace RobloxNET
         public RobloxBadgeAwardingUniverse awardingUniverse { get; set; }
     }
 
+    /*
+     * The RobloxBadgeStatistics class is meant to contain data for Roblox badge
+     * stats.
+    */
     public class RobloxBadgeStatistics
     {
         public RobloxBadgeStatistics(int pastDayAwardedCount, int awardedCount, decimal winRatePercentage)
@@ -385,6 +389,10 @@ namespace RobloxNET
         public decimal winRatePercentage { get; set; }
     }
 
+    /*
+     * The RobloxBadggeAwardingUniverse class is meant to contain data for
+     * the Roblox universe that the badge is apart of.
+    */
     public class RobloxBadgeAwardingUniverse
     {
         public RobloxBadgeAwardingUniverse(long id, string name, long rootPlaceId)
@@ -397,5 +405,23 @@ namespace RobloxNET
         public long id { get; set; }
         public string name { get; set; }
         public long rootPlaceId { get; set; }
+    }
+
+    /*
+     * The RobloxBadgeMetadata class is meant to contain metadata for the Roblox
+     * badges API.
+    */
+    public class RobloxBadgeMetadata
+    {
+        public RobloxBadgeMetadata(int badgeCreationPrice, int maxBadgeNameLength, int maxBadgeDescriptionLength)
+        {
+            this.badgeCreationPrice = badgeCreationPrice;
+            this.maxBadgeNameLength = maxBadgeNameLength;
+            this.maxBadgeDescriptionLength = maxBadgeDescriptionLength;
+        }
+
+        public int badgeCreationPrice { get; set; }
+        public int maxBadgeNameLength { get; set; }
+        public int maxBadgeDescriptionLength { get; set; }
     }
 }
