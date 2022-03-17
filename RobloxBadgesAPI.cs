@@ -60,5 +60,29 @@ namespace RobloxNET
 
             return Metadata;
         }
+
+        public static async Task<int> GetFreeBadgesQuotaFromUniverseIdAsync(long universeId)
+        {
+            int Quota;
+            string APILink = $"https://badges.roblox.com/v1/universes/{universeId}/free-badges-quota";
+
+            using (HttpResponseMessage Response = await HTTPClient.GetAsync(APILink))
+            {
+                if (Response.StatusCode == HttpStatusCode.OK)
+                {
+                    using (HttpContent APIContent = Response.Content)
+                    {
+                        string str = await APIContent.ReadAsStringAsync();
+
+                        Quota = JsonConvert.DeserializeObject<int>(str);
+                    }
+                } else
+                {
+                    throw new HttpRequestException($"Request to get free badges quota from UniverseId {universeId} failed. (HTTP {Response.StatusCode})");
+                }
+            }
+
+            return Quota;
+        }
     }
 }

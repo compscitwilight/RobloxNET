@@ -73,7 +73,6 @@ namespace RobloxNET
             string LimitValue = limit.GetHashCode().ToString();
 
             string APILink = $"https://groups.roblox.com/v2/groups/{groupId}/wall/posts?sortOrder={SortOrderString}&limit={LimitValue}";
-            Console.WriteLine(APILink);
 
             using (HttpResponseMessage Response = await HTTPCLient.GetAsync(APILink))
             {
