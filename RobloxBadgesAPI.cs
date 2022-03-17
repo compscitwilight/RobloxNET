@@ -36,5 +36,29 @@ namespace RobloxNET
 
             return Badge;
         }
+
+        public async static Task<RobloxBadgeMetadata> GetBadgesMetadataAsync()
+        {
+            RobloxBadgeMetadata Metadata;
+            string APILink = "https://badges.roblox.com/v1/badges/metadata";
+
+            using (HttpResponseMessage Response = await HTTPClient.GetAsync(APILink))
+            {
+                if (Response.StatusCode == HttpStatusCode.OK)
+                {
+                    using (HttpContent APIContent = Response.Content)
+                    {
+                        string str = await APIContent.ReadAsStringAsync();
+
+                        Metadata = JsonConvert.DeserializeObject<RobloxBadgeMetadata>(str);
+                    }
+                } else
+                {
+                    throw new HttpRequestException($"Request to get badges metadata from API {APILink} failed. (HTTP {Response.StatusCode})");
+                }
+            }
+
+            return Metadata;
+        }
     }
 }
