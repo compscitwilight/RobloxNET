@@ -173,16 +173,33 @@ namespace RobloxNET
     }
 
     /*
-     * Metadata for the Roblox friends API. 
+     * Metadata of a friend 
     */
     public class RobloxFriendsMetadata
     {
-        public RobloxFriendsMetadata(long targetUserId)
+        public RobloxFriendsMetadata(
+            bool isFriendsFilterBarEnabled, 
+            bool isFriendsPageSortExperimentEnabled, 
+            bool isFriendsUserDataStoreCacheEnabled, 
+            int frequentFriendSortRollout, 
+            string userName, 
+            string displayName
+            )
         {
-            this.targetUserId = targetUserId;
+            this.isFriendsFilterBarEnabled = isFriendsFilterBarEnabled;
+            this.isFriendsPageSortExperimentEnabled = isFriendsPageSortExperimentEnabled;
+            this.isFriendsUserDataStoreCacheEnabled = isFriendsUserDataStoreCacheEnabled;
+            this.frequentFriendSortRollout = frequentFriendSortRollout;
+            this.userName = userName;
+            this.displayName = displayName;
         }
 
-        public long targetUserId { get; set; }
+        public bool isFriendsFilterBarEnabled { get; set; }
+        public bool isFriendsPageSortExperimentEnabled { get; set; }
+        public bool isFriendsUserDataStoreCacheEnabled { get; set; }
+        public int frequentFriendSortRollout { get; set; }
+        public string userName { get; set; }
+        public string displayName { get; set; }
     }
 
     /*

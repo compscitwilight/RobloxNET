@@ -22,6 +22,31 @@ namespace RobloxNET
             HTTPClient.Dispose();
         }
 
+        public async static Task<RobloxFriendsMetadata> GetFriendsMetadata(long targetUserId)
+        {
+            RobloxFriendsMetadata Metadata;
+            string APILink = $"https://friends.roblox.com/v1/metadata?targetUserId={targetUserId}";
+
+            using (HttpResponseMessage APIResponse = await HTTPClient.GetAsync(APILink))
+            {
+                if (APIResponse.StatusCode == HttpStatusCode.OK)
+                {
+                    using (HttpContent ResponseContent = APIResponse.Content)
+                    {
+                        string str = await ResponseContent.ReadAsStringAsync();
+
+                        Metadata = JsonConvert.DeserializeObject<RobloxFriendsMetadata>(str);
+                    }
+                }
+                else
+                {
+                    throw new HttpRequestException($"Request to get friend metadata from UserId {targetUserId} failed. (HTTP {APIResponse.StatusCode})");
+                }
+            }
+
+            return Metadata;
+        }
+
         /*
          * Asynchronously returns an array of RobloxUsers which are the friends of the user's ID.
         */
