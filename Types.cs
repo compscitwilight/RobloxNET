@@ -173,6 +173,19 @@ namespace RobloxNET
     }
 
     /*
+     * Metadata for the Roblox friends API. 
+    */
+    public class RobloxFriendsMetadata
+    {
+        public RobloxFriendsMetadata(long targetUserId)
+        {
+            this.targetUserId = targetUserId;
+        }
+
+        public long targetUserId { get; set; }
+    }
+
+    /*
      * RobloxCanManage is meant to contain data for the GetUserCanManageAsync in
      * the RobloxUsersAPI.
     */
