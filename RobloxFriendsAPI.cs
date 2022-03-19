@@ -22,7 +22,7 @@ namespace RobloxNET
             HTTPClient.Dispose();
         }
 
-        public async static Task<RobloxFriendsMetadata> GetFriendsMetadata(long targetUserId)
+        public async static Task<RobloxFriendsMetadata> GetFriendsMetadataAsync(long targetUserId)
         {
             RobloxFriendsMetadata Metadata;
             string APILink = $"https://friends.roblox.com/v1/metadata?targetUserId={targetUserId}";
